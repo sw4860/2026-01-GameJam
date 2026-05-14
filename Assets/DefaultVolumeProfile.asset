@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9207256584086971825
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3b4540a238c4a4ca10ab62f5e544bf, type: 3}
+  m_Name: AnalogGlitchVolume
+  m_EditorClassIdentifier: URPGlitch::URPGlitch.AnalogGlitchVolume
+  active: 1
+  <displayName>k__BackingField: 
+  scanLineJitter:
+    <fieldHash>k__BackingField: -1473591424
+    m_OverrideState: 1
+    m_Value: 0
+  verticalJump:
+    <fieldHash>k__BackingField: -1234241032
+    m_OverrideState: 1
+    m_Value: 0
+  horizontalShake:
+    <fieldHash>k__BackingField: -516189856
+    m_OverrideState: 1
+    m_Value: 0
+  colorDrift:
+    <fieldHash>k__BackingField: -276839464
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-8186968272690591729
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -320,6 +350,9 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
+    m_OverrideState: 1
+    m_Value: 0
+  filter:
     m_OverrideState: 1
     m_Value: 0
   downscale:
@@ -793,3 +826,21 @@ MonoBehaviour:
   cropToFit:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &9213485238260176112
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d536c364ebc24dd6b769ef6affde936a, type: 3}
+  m_Name: DigitalGlitchVolume
+  m_EditorClassIdentifier: URPGlitch::URPGlitch.DigitalGlitchVolume
+  active: 1
+  <displayName>k__BackingField: 
+  intensity:
+    <fieldHash>k__BackingField: -216342160
+    m_OverrideState: 1
+    m_Value: 0

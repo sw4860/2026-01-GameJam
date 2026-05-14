@@ -2,47 +2,49 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(RectTransform))]
-public class DraggableWindow : MonoBehaviour, IDragHandler, IPointerDownHandler
+public class DraggableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler, IBeginDragHandler
 {
+    [SerializeField] private RectTransform dragHandle;
+    [SerializeField] private Vector2 windowSize;
+
     private Canvas canvas;
-    private RectTransform windowTransform;
+    private RectTransform rt;
 
     void Awake()
     {
         canvas = GetComponentInParent<Canvas>();
-        windowTransform = GetComponent<RectTransform>();
+        rt = GetComponent<RectTransform>();
+        rt.sizeDelta = windowSize;
+    }
+
+    public void OnPointerDown(PointerEventData eventData) => rt.SetAsLastSibling();
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (dragHandle && !RectTransformUtility.RectangleContainsScreenPoint(dragHandle, eventData.position, eventData.pressEventCamera))
+            eventData.pointerDrag = null;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        windowTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-        
-        ClampPos();
+        Vector2 delta = eventData.delta / canvas.scaleFactor;
+
+        rt.anchoredPosition += delta;
+
+        Clamp();
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void Clamp()
     {
-        windowTransform.SetAsLastSibling();
-    }
+        RectTransform p = rt.parent as RectTransform;
+        if (!p) return;
 
-    private void ClampPos()
-    {
-        RectTransform parentRT = windowTransform.parent as RectTransform;
-        if (parentRT == null) return;
+        Vector2 pos = rt.anchoredPosition;
+        Rect pr = p.rect;
+        Rect wr = rt.rect;
 
-        Vector2 pos = windowTransform.anchoredPosition;
-
-        Rect parentRect = parentRT.rect;
-        Rect windowRect = windowTransform.rect;
-
-        float minX = parentRect.xMin - windowRect.xMin;
-        float maxX = parentRect.xMax - windowRect.xMax;
-        float minY = parentRect.yMin - windowRect.yMin;
-        float maxY = parentRect.yMax - windowRect.yMax;
-
-        pos.x = Mathf.Clamp(pos.x, minX, maxX);
-        pos.y = Mathf.Clamp(pos.y, minY, maxY);
-
-        windowTransform.anchoredPosition = pos;
+        pos.x = Mathf.Clamp(pos.x, pr.xMin - wr.xMin, pr.xMax - wr.xMax);
+        pos.y = Mathf.Clamp(pos.y, pr.yMin - wr.yMin, pr.yMax - wr.yMax);
+        rt.anchoredPosition = pos;
     }
 }
