@@ -1,10 +1,10 @@
 ﻿fileFormatVersion: 2
-guid: f4d78aa9c97a393439acb42785328f53
+guid: c6beb7307161fb748a51d4cad80a94f9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1700344658766830451
-    second: pickup_doll_0
+      213: -3935355149600342158
+    second: pickup_diary_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pickup_doll_0
+      name: pickup_diary_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d84687aaa892768e0800000000000000
-      internalID: -1700344658766830451
+      spriteID: 27f3113875fc269c0800000000000000
+      internalID: -3935355149600342158
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pickup_doll_0: -1700344658766830451
+      pickup_diary_0: -3935355149600342158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

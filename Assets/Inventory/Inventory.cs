@@ -8,12 +8,34 @@ public class Inventory : MonoBehaviour
     [System.Serializable]
     public class PickupItem
     {
+        [Tooltip("Optional shared item data. Scene fields below override this when filled.")]
+        public ItemData itemData;
+
+        [Tooltip("Stable item id used by puzzles. Example: key, diary, file")]
         public string id;
+
+        [Tooltip("Item name shown in the acquired popup. Example: 열쇠")]
         public string displayName;
+
+        [Tooltip("Description shown under the acquired popup title.")]
         [TextArea] public string description;
+
         public GameObject sceneObject;
         public Sprite icon;
         public bool hideObjectOnPickup = true;
+
+        public string Id => !string.IsNullOrWhiteSpace(id) ? id : itemData != null ? itemData.Id : string.Empty;
+        public string DisplayName => !string.IsNullOrWhiteSpace(displayName) ? displayName : itemData != null ? itemData.DisplayName : string.Empty;
+        public string Description => !string.IsNullOrWhiteSpace(description) ? description : itemData != null ? itemData.Description : string.Empty;
+        public Sprite Icon => icon != null ? icon : itemData != null ? itemData.Icon : null;
+
+        public void SetFallbackIcon(Sprite fallbackIcon)
+        {
+            if (icon == null)
+            {
+                icon = fallbackIcon;
+            }
+        }
     }
 
     [System.Serializable]
@@ -126,7 +148,7 @@ public class Inventory : MonoBehaviour
 
     public bool HasItem(string itemId)
     {
-        return collectedItems.Exists(item => item.id == itemId);
+        return collectedItems.Exists(item => item.Id == itemId);
     }
 
     public PickupItem GetSelectedItem()
@@ -277,9 +299,9 @@ public class Inventory : MonoBehaviour
         dragStartScreenPosition = screenPosition;
         dragOffset = item.sceneObject.transform.position - GetWorldPosition(screenPosition, item.sceneObject.transform.position.z);
         draggedSpriteRenderer = item.sceneObject.GetComponentInChildren<SpriteRenderer>();
-        if (item.icon == null && draggedSpriteRenderer != null)
+        if (item.Icon == null && draggedSpriteRenderer != null)
         {
-            item.icon = draggedSpriteRenderer.sprite;
+            item.SetFallbackIcon(draggedSpriteRenderer.sprite);
         }
         if (draggedSpriteRenderer != null)
         {
@@ -289,9 +311,9 @@ public class Inventory : MonoBehaviour
 
         if (dragPreviewIcon != null)
         {
-            dragPreviewIcon.sprite = item.icon;
+            dragPreviewIcon.sprite = item.Icon;
             dragPreviewIcon.color = draggedSpriteRenderer != null ? draggedSpriteRenderer.color : Color.white;
-            dragPreviewIcon.enabled = item.icon != null;
+            dragPreviewIcon.enabled = item.Icon != null;
             dragPreviewIcon.transform.SetAsLastSibling();
             dragPreviewIcon.rectTransform.sizeDelta = GetDraggedItemScreenSize(draggedSpriteRenderer);
             dragPreviewIcon.rectTransform.position = screenPosition;
@@ -363,8 +385,8 @@ public class Inventory : MonoBehaviour
         ClickableObject clickableObject = GetClickableObject(clickedObject);
         if (clickableObject != null && !string.IsNullOrWhiteSpace(clickableObject.RequiredItemId))
         {
-            bool correctItem = clickableObject.CanUseItem(selectedItem.id);
-            bool handled = clickableObject.TryUseItem(selectedItem.id);
+            bool correctItem = clickableObject.CanUseItem(selectedItem.Id);
+            bool handled = clickableObject.TryUseItem(selectedItem.Id);
             if (!handled)
             {
                 return false;
@@ -480,9 +502,9 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        if (selectedItem.id != "key")
+        if (selectedItem.Id != "key")
         {
-            Debug.Log(selectedItem.displayName + " does not fit here.");
+            Debug.Log(selectedItem.DisplayName + " does not fit here.");
             return;
         }
 
@@ -500,9 +522,9 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        if (selectedItem.id != "key")
+        if (selectedItem.Id != "key")
         {
-            Debug.Log(selectedItem.displayName + " does not open the safe.");
+            Debug.Log(selectedItem.DisplayName + " does not open the safe.");
             return;
         }
 
@@ -681,26 +703,26 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        if (item.icon == null && item.sceneObject != null)
+        if (item.Icon == null && item.sceneObject != null)
         {
             SpriteRenderer spriteRenderer = item.sceneObject.GetComponentInChildren<SpriteRenderer>();
             if (spriteRenderer != null)
             {
-                item.icon = spriteRenderer.sprite;
+                item.SetFallbackIcon(spriteRenderer.sprite);
             }
         }
 
         collectedItems.Add(item);
         selectedIndex = collectedItems.Count - 1;
-        GameState.Instance?.SetFlag("item_" + item.id);
+        GameState.Instance?.SetFlag("item_" + item.Id);
 
         if (item.hideObjectOnPickup && item.sceneObject != null)
         {
             item.sceneObject.SetActive(false);
         }
 
-        string itemName = string.IsNullOrWhiteSpace(item.displayName) ? item.id : item.displayName;
-        ItemAcquiredPopup.Instance?.Show(itemName, item.description);
+        string itemName = string.IsNullOrWhiteSpace(item.DisplayName) ? item.Id : item.DisplayName;
+        ItemAcquiredPopup.Instance?.Show(itemName, item.Description);
 
         RefreshSlots();
         RefreshBagWindow();
@@ -828,8 +850,8 @@ public class Inventory : MonoBehaviour
 
             if (slots[i].icon != null)
             {
-                slots[i].icon.enabled = hasItem && collectedItems[i].icon != null;
-                slots[i].icon.sprite = hasItem ? collectedItems[i].icon : null;
+                slots[i].icon.enabled = hasItem && collectedItems[i].Icon != null;
+                slots[i].icon.sprite = hasItem ? collectedItems[i].Icon : null;
                 slots[i].icon.preserveAspect = true;
             }
         }
@@ -870,8 +892,8 @@ public class Inventory : MonoBehaviour
 
             if (bagSlots[i].icon != null)
             {
-                bagSlots[i].icon.enabled = hasItem && collectedItems[i].icon != null;
-                bagSlots[i].icon.sprite = hasItem ? collectedItems[i].icon : null;
+                bagSlots[i].icon.enabled = hasItem && collectedItems[i].Icon != null;
+                bagSlots[i].icon.sprite = hasItem ? collectedItems[i].Icon : null;
                 bagSlots[i].icon.preserveAspect = true;
             }
         }

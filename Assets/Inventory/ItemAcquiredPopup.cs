@@ -43,7 +43,7 @@ public class ItemAcquiredPopup : MonoBehaviour
 
         if (titleText != null)
         {
-            titleText.text = "[" + itemName + "]를 획득했다.";
+            titleText.text = "[" + itemName + "를 획득했다.]";
         }
 
         if (bodyText != null)
@@ -96,18 +96,18 @@ public class ItemAcquiredPopup : MonoBehaviour
         panel.raycastTarget = false;
 
         RectTransform panelRect = panel.rectTransform;
-        panelRect.anchorMin = new Vector2(0.32f, 0.72f);
-        panelRect.anchorMax = new Vector2(0.68f, 0.90f);
+        panelRect.anchorMin = new Vector2(0.26f, 0.66f);
+        panelRect.anchorMax = new Vector2(0.74f, 0.90f);
         panelRect.offsetMin = Vector2.zero;
         panelRect.offsetMax = Vector2.zero;
 
-        titleText = CreateText("Title", panelObject.transform, 23, FontStyle.Bold, titleColor, new Vector2(0f, 0.52f), Vector2.one);
-        titleText.rectTransform.offsetMin = new Vector2(22f, 0f);
-        titleText.rectTransform.offsetMax = new Vector2(-22f, -10f);
+        titleText = CreateText("Title", panelObject.transform, 21, FontStyle.Bold, titleColor, new Vector2(0f, 0.54f), Vector2.one);
+        titleText.rectTransform.offsetMin = new Vector2(26f, 2f);
+        titleText.rectTransform.offsetMax = new Vector2(-26f, -8f);
 
-        bodyText = CreateText("Description", panelObject.transform, 19, FontStyle.Normal, bodyColor, Vector2.zero, new Vector2(1f, 0.56f));
-        bodyText.rectTransform.offsetMin = new Vector2(22f, 12f);
-        bodyText.rectTransform.offsetMax = new Vector2(-22f, 0f);
+        bodyText = CreateText("Description", panelObject.transform, 18, FontStyle.Normal, bodyColor, Vector2.zero, new Vector2(1f, 0.58f));
+        bodyText.rectTransform.offsetMin = new Vector2(26f, 12f);
+        bodyText.rectTransform.offsetMax = new Vector2(-26f, -4f);
     }
 
     private Text CreateText(string objectName, Transform parent, int fontSize, FontStyle style, Color color, Vector2 anchorMin, Vector2 anchorMax)
@@ -122,7 +122,10 @@ public class ItemAcquiredPopup : MonoBehaviour
         text.alignment = TextAnchor.MiddleLeft;
         text.color = color;
         text.horizontalOverflow = HorizontalWrapMode.Wrap;
-        text.verticalOverflow = VerticalWrapMode.Truncate;
+        text.verticalOverflow = VerticalWrapMode.Overflow;
+        text.resizeTextForBestFit = true;
+        text.resizeTextMinSize = 13;
+        text.resizeTextMaxSize = fontSize;
 
         RectTransform rect = text.rectTransform;
         rect.anchorMin = anchorMin;
