@@ -55,17 +55,17 @@ public class EndingDemoController : MonoBehaviour
     [SerializeField] private int[] girlExpressionIndexByDialogue =
     {
         0,
-        0,
-        3,
-        0,
-        10,
+        1,
+        4,
+        5,
         6,
-        6,
-       11,
-       12,
-       10,
+        7,
         10,
+        10,
+        12,
+        14,
         17,
+        16,
         18
     };
 
