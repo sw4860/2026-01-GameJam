@@ -5,9 +5,10 @@ using System.Collections;
 
 public class ChatLogManager : MonoBehaviour
 {
-    public static ChatLogManager Instance;
+    public static ChatLogManager Instance { get; private set; }
     
     [Header("References")]
+    public GameObject MessagePanel;
     public GameObject MessagePrefab;
     public RectTransform messageContent;
     public ScrollRect messageScrollRect;
@@ -17,9 +18,14 @@ public class ChatLogManager : MonoBehaviour
     public ChatData currentChatData;
     public int chatIndex = 0;
 
+    [Header("Events")]
+    public UnityEngine.Events.UnityEvent OnChatComplete;
+    public UnityEngine.Events.UnityAction<string> OnActionTriggered;
+
     void Awake()
     {
         Instance = this;
+        if (OnChatComplete == null) OnChatComplete = new UnityEngine.Events.UnityEvent();
     }
 
     void Start()
@@ -40,6 +46,11 @@ public class ChatLogManager : MonoBehaviour
             Destroy(messageContent.GetChild(i).gameObject);
         }
         
+        if (MessagePanel != null)
+        {
+            MessagePanel.SetActive(true);
+            MessagePanel.GetComponent<RectTransform>().SetAsLastSibling();
+        }
         ShowNextChat();
     }
 
@@ -48,10 +59,18 @@ public class ChatLogManager : MonoBehaviour
         if (currentChatData == null || chatIndex >= currentChatData.chatLogs.Length)
         {
             Debug.Log("End of chat");
+            OnChatComplete?.Invoke();
             return;
         }
 
         AddChatLog(chatIndex);
+        
+        string tag = currentChatData.chatLogs[chatIndex].actionTag;
+        if (!string.IsNullOrEmpty(tag))
+        {
+            OnActionTriggered?.Invoke(tag);
+        }
+
         chatIndex++;
     }
 
@@ -60,11 +79,11 @@ public class ChatLogManager : MonoBehaviour
         if (currentChatData == null || index < 0 || index >= currentChatData.chatLogs.Length)
             return;
 
-        string content = currentChatData.chatLogs[index].message;
-
         GameObject messageObj = Instantiate(MessagePrefab, messageContent);
-        messageObj.TryGetComponent<ChatLogObject>(out var chatLogObject);
-        chatLogObject.Init(currentChatData, index);
+        if (messageObj.TryGetComponent<ChatLogObject>(out var chatLogObject))
+        {
+            chatLogObject.Init(currentChatData.chatLogs[index]);
+        }
 
         StartCoroutine(UpdateChatUI());
     }
@@ -72,10 +91,8 @@ public class ChatLogManager : MonoBehaviour
     IEnumerator UpdateChatUI()
     {
         yield return null;
-
         LayoutRebuilder.ForceRebuildLayoutImmediate(messageContent);
         Canvas.ForceUpdateCanvases();
-
-        messageScrollRect.verticalNormalizedPosition = 0f;
+        if (messageScrollRect != null) messageScrollRect.verticalNormalizedPosition = 0f;
     }
 }

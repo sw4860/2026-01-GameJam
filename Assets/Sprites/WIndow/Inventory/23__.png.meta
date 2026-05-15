@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: 0f2e7db40ced11a4ca30c1afa30f4bcc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8857123647794511944
+    second: 23___0
+  - first:
+      213: -5666683132980599320
+    second: 23___1
+  - first:
+      213: -4184704303521397190
+    second: 23___2
+  - first:
+      213: -5013647119897116030
+    second: 23___3
+  - first:
+      213: 1335174383533953313
+    second: 23___4
+  - first:
+      213: 8904125881367873367
+    second: 23___5
+  - first:
+      213: 968403236986299667
+    second: 23___6
+  - first:
+      213: 6419545467542170809
+    second: 23___7
+  - first:
+      213: 9149849011754462125
+    second: 23___8
+  - first:
+      213: 1569157406073326243
+    second: 23___9
+  - first:
+      213: 7025718273668195193
+    second: 23___10
+  - first:
+      213: -8562179479311298607
+    second: 23___11
+  - first:
+      213: 1761044508542237994
+    second: 23___12
+  - first:
+      213: 7368655746629847448
+    second: 23___13
+  - first:
+      213: 2509242402562426920
+    second: 23___14
+  - first:
+      213: 9169297013837871706
+    second: 23___15
+  - first:
+      213: 1626919165981357551
+    second: 23___16
+  - first:
+      213: -5032258395927561944
+    second: 23___17
+  - first:
+      213: 1571481233122395858
+    second: 23___18
+  - first:
+      213: 3675585079167655869
+    second: 23___19
+  - first:
+      213: -6648591804918327719
+    second: 23___20
+  - first:
+      213: -354619995191920468
+    second: 23___21
+  - first:
+      213: -2906206489552459961
+    second: 23___22
+  - first:
+      213: -2354113495262326863
+    second: 23___23
+  - first:
+      213: -2456523873241711176
+    second: 23___24
+  - first:
+      213: 7894442721651021142
+    second: 23___25
+  - first:
+      213: 6971090208982507810
+    second: 23___26
+  - first:
+      213: 6657922789024737803
+    second: 23___27
+  - first:
+      213: -4072847721037476842
+    second: 23___28
+  - first:
+      213: -1112623640799640591
+    second: 23___29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: InventoryBG
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 492
+        width: 31
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8400186d703daea70800000000000000
+      internalID: 8857123647794511944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6540f7bb74a5a2e4d91afb4860947720
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      23___1: -5666683132980599320
+      23___10: 7025718273668195193
+      23___11: -8562179479311298607
+      23___12: 1761044508542237994
+      23___13: 7368655746629847448
+      23___14: 2509242402562426920
+      23___15: 9169297013837871706
+      23___16: 1626919165981357551
+      23___17: -5032258395927561944
+      23___18: 1571481233122395858
+      23___19: 3675585079167655869
+      23___2: -4184704303521397190
+      23___20: -6648591804918327719
+      23___21: -354619995191920468
+      23___22: -2906206489552459961
+      23___23: -2354113495262326863
+      23___24: -2456523873241711176
+      23___25: 7894442721651021142
+      23___26: 6971090208982507810
+      23___27: 6657922789024737803
+      23___28: -4072847721037476842
+      23___29: -1112623640799640591
+      23___3: -5013647119897116030
+      23___4: 1335174383533953313
+      23___5: 8904125881367873367
+      23___6: 968403236986299667
+      23___7: 6419545467542170809
+      23___8: 9149849011754462125
+      23___9: 1569157406073326243
+      InventoryBG: 8857123647794511944
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
