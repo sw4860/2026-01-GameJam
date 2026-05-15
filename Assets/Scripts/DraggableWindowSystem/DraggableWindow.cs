@@ -16,7 +16,11 @@ public class DraggableWindow : MonoBehaviour, IPointerDownHandler, IDragHandler,
 
     public void SetSize(Vector2 size)
     {
-        if (rt == null) rt = GetComponent<RectTransform>();
+        if (rt == null)
+        {
+            rt = GetComponent<RectTransform>();
+        }
+
         rt.sizeDelta = size;
     }
 
