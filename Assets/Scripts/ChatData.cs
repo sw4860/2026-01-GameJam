@@ -2,18 +2,18 @@ using UnityEngine;
 
 public enum SenderType
 {
-    Player,
-    System,
-    Other
+    Player = 0,
+    System = 1,
+    Other = 2
 }
 
 [System.Serializable]
 public class chatLogs
 {
+    public SenderType senderType;
     public string senderName;
     public Sprite senderSprite;
-    public SenderType senderType;
-    public string message;
+    [TextArea(3, 10)] public string message;
     public float interval;
     public string actionTag;
 }

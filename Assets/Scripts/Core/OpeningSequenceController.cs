@@ -56,7 +56,7 @@ public class OpeningSequenceController : MonoBehaviour
         switch (tag)
         {
             case "glitch":
-                if (glitchAnimator != null) glitchAnimator.SetTrigger("PlayGlitch");
+                if (glitchAnimator != null) glitchAnimator.SetTrigger("Glitch");
                 if (girlUI != null) girlUI.PlayGlitch();
                 break;
 

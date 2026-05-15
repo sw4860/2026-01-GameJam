@@ -10,31 +10,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d20f5ca27eb41284f8664fc33f6e531e, type: 3}
-  m_Name: SampleChatData
+  m_Name: Opening ChatData
   m_EditorClassIdentifier: Assembly-CSharp::ChatData
   chatLogs:
-  - senderName: Test
+  - senderType: 2
+    senderName: 234
     senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
-    senderType: 2
-    message: Hi!
-    interval: 0.5
-  - senderName: Test
+    message: 234
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: 234
     senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
-    senderType: 2
-    message: My 2nd Chat
-    interval: 1
-  - senderName: Me!
+    message: 234
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: 234
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: 234
+    interval: 0
+    actionTag: 
+  - senderType: 0
+    senderName: 
     senderSprite: {fileID: 0}
-    senderType: 0
-    message: Hello!
-    interval: 1
-  - senderName: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
-    senderType: 2
-    message: asdffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-    interval: 1
-  - senderName: 
+    message: 234
+    interval: 0
+    actionTag: 
+  - senderType: 0
+    senderName: 
     senderSprite: {fileID: 0}
-    senderType: 1
-    message: End of Chat
-    interval: 1
+    message: 234
+    interval: 0
+    actionTag: 
+  - senderType: 1
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: end
+    interval: 0
+    actionTag: 

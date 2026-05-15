@@ -141,7 +141,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10, y: 3, z: 3, w: 3}
+  m_margin: {x: 10, y: 3, z: 10, w: 3}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -751,9 +751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffa605f81600384fb04cdea73d7e9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  backRt: {fileID: 4104743500370814950}
   chatBoxImage: {fileID: 6226159309353196221}
-  BoxSprite: {fileID: 6782305719301256243, guid: 971e4ac81e16ffd4ea58915645e26213, type: 3}
+  systemBoxSprite: {fileID: 6782305719301256243, guid: 971e4ac81e16ffd4ea58915645e26213, type: 3}
   senderSprite: {fileID: 3728060185270477679}
   senderName: {fileID: 3453723398662506138}
   message: {fileID: 8943268751491123184}

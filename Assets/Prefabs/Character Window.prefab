@@ -177,8 +177,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Character
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 073e251e87a520241a1baa2fc6a0b661, type: 2}
+  m_sharedMaterial: {fileID: -5734672192566055852, guid: 073e251e87a520241a1baa2fc6a0b661, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 5016477954969125363}
   - component: {fileID: 994051674559266856}
   - component: {fileID: 6489337111198874439}
+  - component: {fileID: 3843053217206974050}
   m_Layer: 5
   m_Name: Character Window
   m_TagString: Untagged
@@ -327,6 +328,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableWindow
   dragHandle: {fileID: 473739271741267899}
+--- !u!114 &3843053217206974050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495804943606129891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979d75c34436c8d4db59fc049d9905a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterUIController
+  characterImage: {fileID: 7335806064530290472}
+  characterAnimator: {fileID: 6104518458916818681}
 --- !u!1 &7056536596773133392
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +353,7 @@ GameObject:
   - component: {fileID: 7465780225345607352}
   - component: {fileID: 3561110581711734549}
   - component: {fileID: 7335806064530290472}
+  - component: {fileID: 6104518458916818681}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -392,9 +408,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1955732919083190279, guid: 85ffe8ba30e04f44281a8db5793c8c14, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -402,6 +418,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6104518458916818681
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7056536596773133392}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 803fe06bd958129469caa0e511594e05, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7977513327613171148
 GameObject:
   m_ObjectHideFlags: 0
