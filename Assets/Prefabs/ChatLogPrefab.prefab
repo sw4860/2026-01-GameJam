@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 1556604135433124408}
   - component: {fileID: 1008115947445497391}
   - component: {fileID: 8197572837126888262}
+  - component: {fileID: -8750265917261955105}
   m_Layer: 5
   m_Name: ChatLogPrefab
   m_TagString: Untagged
@@ -802,3 +803,17 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &-8750265917261955105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135935548619791785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 2

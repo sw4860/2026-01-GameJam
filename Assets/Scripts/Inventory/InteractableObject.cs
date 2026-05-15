@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class InteractableObject : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
+public class InteractableObject : MonoBehaviour, IPointerDownHandler
 {
     [Header("--- Requirements ---")]
     [SerializeField] private ItemData requiredItem;
@@ -23,8 +23,6 @@ public class InteractableObject : MonoBehaviour, IPointerDownHandler, IPointerEn
 
     [Header("--- Visual & State ---")]
     [SerializeField] private GameObject toggleObject;
-    [SerializeField] private Texture2D hoverCursor;
-    [SerializeField] private Texture2D defaultCursor;
     [SerializeField] private bool disableColliderOnSuccess = false;
     [SerializeField] private bool disableObjectOnSuccess = false;
 
@@ -41,26 +39,15 @@ public class InteractableObject : MonoBehaviour, IPointerDownHandler, IPointerEn
         if (toggleObject != null) toggleObject.SetActive(false);
     }
 
-    public void OnPointerDown(PointerEventData eventData) => Interact();
-    public void OnPointerEnter(PointerEventData eventData) => SetHover(true);
-    public void OnPointerExit(PointerEventData eventData) => SetHover(false);
-
-    private void SetHover(bool active)
+    // 커서 변경은 이제 CursorManage와 RenderTexturePointer가 전담합니다.
+    // 여기서는 색상 변경 등 순수 시각적 효과만 남깁니다.
+    public void SetHighlight(bool active)
     {
-        if (isInteracted && interactOnlyOnce) 
-        {
-            SetCursor(defaultCursor);
-            return;
-        }
-
+        if (isInteracted && interactOnlyOnce) return;
         if (sr) sr.color = active ? new Color(1f, 0.9f, 0.6f) : originColor;
-        SetCursor(active ? hoverCursor : defaultCursor);
     }
 
-    private void SetCursor(Texture2D tex)
-    {
-        Cursor.SetCursor(tex, Vector2.zero, CursorMode.Auto);
-    }
+    public void OnPointerDown(PointerEventData eventData) => Interact();
 
     public void Interact()
     {
@@ -68,7 +55,6 @@ public class InteractableObject : MonoBehaviour, IPointerDownHandler, IPointerEn
 
         var selectedItem = Inventory.Instance?.GetSelectedItem();
 
-        // 1. Using an item
         if (selectedItem != null)
         {
             if (requiredItem != null && selectedItem.Id == requiredItem.Id)
@@ -84,7 +70,6 @@ public class InteractableObject : MonoBehaviour, IPointerDownHandler, IPointerEn
             return;
         }
 
-        // 2. Direct click (Examine or simple interaction)
         if (requiredItem == null)
         {
             StartSuccessSequence();
@@ -100,6 +85,7 @@ public class InteractableObject : MonoBehaviour, IPointerDownHandler, IPointerEn
     {
         isInteracted = true;
         if (sr) sr.color = originColor;
+        CursorManage.ResetToDefault(); // 상호작용 성공 시 커서 리셋
 
         if (successChat != null && ChatLogManager.Instance != null)
         {
@@ -119,29 +105,18 @@ public class InteractableObject : MonoBehaviour, IPointerDownHandler, IPointerEn
         if (ChatLogManager.Instance != null)
             ChatLogManager.Instance.OnChatComplete.RemoveListener(ExecuteActions);
 
-        // Give Item
         if (itemToGive != null)
         {
             Inventory.PickupItem pickup = new Inventory.PickupItem { itemData = itemToGive };
             Inventory.Instance?.AddItem(pickup);
         }
 
-        // Visual State Toggle
         if (toggleObject != null) toggleObject.SetActive(true);
         if (disableColliderOnSuccess && col != null) col.enabled = false;
         
-        // Trigger Events
         if (!string.IsNullOrEmpty(globalEventId)) EventManager.Instance?.TriggerEvent(globalEventId);
         OnSuccess?.Invoke();
 
         if (disableObjectOnSuccess) gameObject.SetActive(false);
-    }
-
-    public void ResetInteraction()
-    {
-        isInteracted = false;
-        if (col != null) col.enabled = true;
-        if (toggleObject != null) toggleObject.SetActive(false);
-        gameObject.SetActive(true);
     }
 }

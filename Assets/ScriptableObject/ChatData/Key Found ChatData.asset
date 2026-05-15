@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb8d98fad5c31e14abb3fd7507164e9e, type: 3}
-  m_Name: ItemData
-  m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: 
-  displayName: 
-  description: 
-  icon: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: d20f5ca27eb41284f8664fc33f6e531e, type: 3}
+  m_Name: Key Found ChatData
+  m_EditorClassIdentifier: Assembly-CSharp::ChatData
+  chatLogs: []

@@ -2,29 +2,37 @@ using UnityEngine;
 
 public class CursorManage : MonoBehaviour
 {
-    [SerializeField] private Texture2D hover;
-    [SerializeField] private Texture2D original;
+    [Header("Cursor Settings")]
+    [SerializeField] private Texture2D hoverCursor;
+    [SerializeField] private Vector2 hotSpot = Vector2.zero;
+
+    private static Texture2D defaultCursor;
+    private static CursorManage currentActive;
 
     public void SetHoverCursor()
     {
-        if (hover != null)
+        if (hoverCursor != null)
         {
-            Cursor.SetCursor(hover, Vector2.zero, CursorMode.Auto);
+            currentActive = this;
+            Cursor.SetCursor(hoverCursor, hotSpot, CursorMode.Auto);
         }
     }
     
-    public void SetDefaultCursor()
+    public static void ResetToDefault()
     {
-        Cursor.SetCursor(original, Vector2.zero, CursorMode.Auto);
+        currentActive = null;
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
+    // 일반 3D/2D 오브젝트용 (RenderTexture 밖의 월드 객체)
     private void OnMouseEnter()
     {
-        SetHoverCursor();
+        // RenderTexturePointer가 처리하지 않는 일반 월드 객체일 경우에만 작동
+        if (RenderTexturePointer.Instance == null) SetHoverCursor();
     }
 
     private void OnMouseExit()
     {
-        SetDefaultCursor();
+        if (RenderTexturePointer.Instance == null && currentActive == this) ResetToDefault();
     }
 }

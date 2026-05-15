@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class ChatLogObject : MonoBehaviour
 {
+    [Header("UI Components")]
     [SerializeField] private Image chatBoxImage;
     [SerializeField] private Sprite systemBoxSprite;
     [SerializeField] private Image senderSprite;
@@ -14,10 +15,7 @@ public class ChatLogObject : MonoBehaviour
     {
         if (log == null) return;
 
-        // [핵심 진단] 타입이 숫자로 어떻게 들어오는지 확인 (0: Player, 1: System, 2: Other)
-        Debug.Log($"[ChatLogObject] Init - Name: {log.senderName}, Type: {log.senderType} ({(int)log.senderType})");
-
-        // 1. 기본 데이터 설정
+        // 1. 기본 데이터 세팅
         if (senderName != null) senderName.text = log.senderName ?? "";
         if (message != null) message.text = log.message ?? "";
         if (senderSprite != null) 
@@ -26,7 +24,7 @@ public class ChatLogObject : MonoBehaviour
             senderSprite.gameObject.SetActive(log.senderSprite != null && log.senderType != SenderType.System);
         }
 
-        // 2. 레이아웃 컴포넌트 참조
+        // 2. 레이아웃 엔진 참조
         var rootLayout = GetComponent<HorizontalLayoutGroup>();
         var contentColumnTransform = transform.Find("ContentColumn");
         var contentColumn = contentColumnTransform != null ? contentColumnTransform.GetComponent<RectTransform>() : null;
@@ -34,10 +32,18 @@ public class ChatLogObject : MonoBehaviour
 
         if (rootLayout != null)
         {
-            // 리셋 및 초기화
-            ResetLayout(rootLayout, columnLayout);
+            // [중요] 레이아웃 강제 설정 리셋
+            rootLayout.childForceExpandWidth = false;
+            rootLayout.childControlWidth = true;
+            rootLayout.reverseArrangement = false;
 
-            // 타입별 설정
+            if (columnLayout != null)
+            {
+                columnLayout.childForceExpandWidth = false;
+                columnLayout.childControlWidth = true;
+            }
+
+            // 타입별 비주얼 적용
             switch (log.senderType)
             {
                 case SenderType.System:
@@ -52,71 +58,71 @@ public class ChatLogObject : MonoBehaviour
                     break;
             }
 
-            // 3. 레이아웃 강제 갱신
+            // 3. 레이아웃 즉시 갱신 (하위에서 상위로)
             if (contentColumn != null) LayoutRebuilder.ForceRebuildLayoutImmediate(contentColumn);
             LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
-        }
-    }
-
-    private void ResetLayout(HorizontalLayoutGroup root, VerticalLayoutGroup column)
-    {
-        root.reverseArrangement = false;
-        root.childAlignment = TextAnchor.UpperLeft;
-        
-        if (chatBoxImage != null)
-        {
-            chatBoxImage.rectTransform.localScale = Vector3.one;
-        }
-        
-        if (message != null)
-        {
-            message.rectTransform.localScale = Vector3.one;
-            message.alignment = TextAlignmentOptions.Left;
-        }
-
-        if (column != null)
-        {
-            column.childAlignment = TextAnchor.UpperLeft;
-        }
-
-        if (senderName != null)
-        {
-            senderName.alignment = TextAlignmentOptions.Left;
         }
     }
 
     private void ApplySystemLayout(HorizontalLayoutGroup root, VerticalLayoutGroup column)
     {
         if (chatBoxImage != null && systemBoxSprite != null) chatBoxImage.sprite = systemBoxSprite;
+        
         root.childAlignment = TextAnchor.UpperCenter;
         if (column != null) column.childAlignment = TextAnchor.UpperCenter;
+        
         if (senderName != null) senderName.alignment = TextAlignmentOptions.Center;
-        if (message != null) message.alignment = TextAlignmentOptions.Center;
+        if (message != null)
+        {
+            message.alignment = TextAlignmentOptions.Center;
+            message.rectTransform.localScale = Vector3.one;
+        }
+        if (chatBoxImage != null) chatBoxImage.rectTransform.localScale = Vector3.one;
     }
 
     private void ApplyPlayerLayout(HorizontalLayoutGroup root, VerticalLayoutGroup column)
     {
+        // 오른쪽 정렬 설정
         root.reverseArrangement = true; 
         root.childAlignment = TextAnchor.UpperRight;
+        
         if (column != null) column.childAlignment = TextAnchor.UpperRight;
         if (senderName != null) senderName.alignment = TextAlignmentOptions.Right;
 
         if (chatBoxImage != null)
         {
+            // 말풍선 반전
             chatBoxImage.rectTransform.localScale = new Vector3(-1, 1, 1);
+            
             if (message != null)
             {
+                // 글자가 뒤집히는 것 방지
                 if (message.transform.IsChildOf(chatBoxImage.transform))
-                {
                     message.rectTransform.localScale = new Vector3(-1, 1, 1);
-                }
-                message.alignment = TextAlignmentOptions.Right;
+                else
+                    message.rectTransform.localScale = Vector3.one;
+
+                // [가독성 개선] 말풍선 안의 글자는 좌측 정렬이 더 깔끔합니다. 
+                // 필요하다면 Right로 변경 가능합니다.
+                message.alignment = TextAlignmentOptions.Left; 
             }
         }
     }
 
     private void ApplyOtherLayout(HorizontalLayoutGroup root, VerticalLayoutGroup column)
     {
-        // ResetLayout에서 이미 기본값으로 설정됨
+        // 왼쪽 정렬 설정 (기본값)
+        root.reverseArrangement = false;
+        root.childAlignment = TextAnchor.UpperLeft;
+        
+        if (column != null) column.childAlignment = TextAnchor.UpperLeft;
+        if (senderName != null) senderName.alignment = TextAlignmentOptions.Left;
+
+        if (chatBoxImage != null) chatBoxImage.rectTransform.localScale = Vector3.one;
+        if (message != null)
+        {
+            message.rectTransform.localScale = Vector3.one;
+            message.alignment = TextAlignmentOptions.Left;
+        }
     }
 }

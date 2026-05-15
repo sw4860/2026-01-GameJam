@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1a3def2924826438b5e58561638ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowManager
-  windowPrefab: {fileID: 5859429712012888126, guid: 15c64221eccd29a449f5f33140e01f84, type: 3}
+  windowPrefab: {fileID: 5859429712012888126, guid: fc1f49414477cfb4ea456ee9b4cd8ab9, type: 3}
   windowParent: {fileID: 488585786}
 --- !u!4 &54291215
 Transform:
@@ -298,7 +298,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 22.5}
-  m_SizeDelta: {x: -320, y: 45}
+  m_SizeDelta: {x: 0, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &93616607
 MonoBehaviour:
@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
-    m_Left: 30
+    m_Left: 215
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
@@ -364,6 +364,187 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93616605}
   m_CullTransparentMesh: 1
+--- !u!1 &157351472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157351476}
+  - component: {fileID: 157351475}
+  - component: {fileID: 157351474}
+  - component: {fileID: 157351473}
+  - component: {fileID: 157351477}
+  m_Layer: 6
+  m_Name: Picture_0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157351473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157351472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e2b8669bd55a145a6282625d7a7bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  requiredItem: {fileID: 0}
+  consumeItemOnSuccess: 0
+  interactOnlyOnce: 1
+  successChat: {fileID: 11400000, guid: 5643b4fb2f0499e4a8904da1fd85060f, type: 2}
+  windowToOpen: {fileID: 11400000, guid: 5a93f5f3732af904aa3c71a2a6ad8ddf, type: 2}
+  itemToGive: {fileID: 0}
+  globalEventId: 
+  OnSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  examineChat: {fileID: 0}
+  wrongItemText: It doesn't seem to work with this.
+  toggleObject: {fileID: 0}
+  disableColliderOnSuccess: 0
+  disableObjectOnSuccess: 0
+--- !u!61 &157351474
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157351472}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.68, y: 0.76}
+    newSize: {x: 0.17, y: 0.19}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.68, y: 0.76}
+  m_EdgeRadius: 0
+--- !u!212 &157351475
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157351472}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 7082200727899390915, guid: 66f2ba4357d00774d8147048a185373f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.17, y: 0.19}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!4 &157351476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157351472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -37.977, y: 0.676, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &157351477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157351472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &177201244
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,8 +674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorManage
-  hover: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  original: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
+  hoverCursor: {fileID: 0}
+  hotSpot: {x: 0, y: 0}
 --- !u!114 &191826948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,6 +1386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2028937379}
+  - {fileID: 648562068}
   - {fileID: 1237351814}
   - {fileID: 530226425}
   - {fileID: 1452919498}
@@ -1654,11 +1836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6588047595082056870, guid: 422773a3145d62742be7f93137bb531a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -360.5
+      value: 435
       objectReference: {fileID: 0}
     - target: {fileID: 6588047595082056870, guid: 422773a3145d62742be7f93137bb531a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 53
+      value: 281
       objectReference: {fileID: 0}
     - target: {fileID: 6588047595082056870, guid: 422773a3145d62742be7f93137bb531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1941,6 +2123,8 @@ GameObject:
   - component: {fileID: 530226426}
   - component: {fileID: 530226432}
   - component: {fileID: 530226433}
+  - component: {fileID: 530226434}
+  - component: {fileID: 530226435}
   m_Layer: 6
   m_Name: 47_Memory01_Desk_open_drawer_0
   m_TagString: Untagged
@@ -2100,10 +2284,35 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 1452919497}
-  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  defaultCursor: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 1
+--- !u!114 &530226434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530226424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates: []
+--- !u!114 &530226435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530226424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &587971654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,8 +2404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorManage
-  hover: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  original: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
+  hoverCursor: {fileID: 0}
+  hotSpot: {x: 0, y: 0}
 --- !u!114 &587971658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,6 +2466,201 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &648562067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648562068}
+  - component: {fileID: 648562072}
+  - component: {fileID: 648562071}
+  - component: {fileID: 648562070}
+  - component: {fileID: 648562069}
+  - component: {fileID: 648562073}
+  m_Layer: 6
+  m_Name: 48_Memory01_Desk_chair_Back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &648562068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648562067}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.555, y: -1.775, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 303050203}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &648562069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648562067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates: []
+--- !u!61 &648562070
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648562067}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.16, y: 2.76}
+    newSize: {x: 2.16, y: 2.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.16, y: 2.76}
+  m_EdgeRadius: 0
+--- !u!114 &648562071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648562067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e2b8669bd55a145a6282625d7a7bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  requiredItem: {fileID: 0}
+  consumeItemOnSuccess: 0
+  interactOnlyOnce: 0
+  successChat: {fileID: 0}
+  windowToOpen: {fileID: 0}
+  itemToGive: {fileID: 0}
+  globalEventId: 
+  OnSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  examineChat: {fileID: 0}
+  wrongItemText: It doesn't seem to work with this.
+  toggleObject: {fileID: 1237351813}
+  disableColliderOnSuccess: 0
+  disableObjectOnSuccess: 1
+--- !u!212 &648562072
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648562067}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 11
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -6122833917185723287, guid: 2a5c88ba895a90b448e4ab6bb651c44a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.16, y: 2.76}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!114 &648562073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648562067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1001 &657908568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2275,7 +2679,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1902413628449358972, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1927467653020406288, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2347,11 +2751,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2030922877397711277, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -369
+      value: -442
       objectReference: {fileID: 0}
     - target: {fileID: 2030922877397711277, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 224
+      value: -177
       objectReference: {fileID: 0}
     - target: {fileID: 2030922877397711277, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2373,13 +2777,25 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TogglePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 5218728029026319927, guid: 384868efef532014db184f786186408b, type: 3}
+      propertyPath: m_Spacing
+      value: -65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5218728029026319927, guid: 384868efef532014db184f786186408b, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6282181567975966082, guid: 384868efef532014db184f786186408b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 28.4309
+      objectReference: {fileID: 0}
     - target: {fileID: 6282181567975966082, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.84
       objectReference: {fileID: 0}
     - target: {fileID: 6282181567975966082, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 88
+      value: 57.416
       objectReference: {fileID: 0}
     - target: {fileID: 8924789416594420350, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_Name
@@ -2387,15 +2803,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8924789416594420350, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9000394595467060419, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000394595467060419, guid: 384868efef532014db184f786186408b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2471,7 +2887,7 @@ MonoBehaviour:
   girlUI: {fileID: 1558025437}
   openingChat: {fileID: 11400000, guid: ec68733531900f940a17199886303b3e, type: 2}
   glitchAnimator: {fileID: 0}
-  memoryWindowData: {fileID: 0}
+  mainWindow: {fileID: 1538741104}
 --- !u!4 &702842748
 Transform:
   m_ObjectHideFlags: 0
@@ -2818,8 +3234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorManage
-  hover: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  original: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
+  hoverCursor: {fileID: 0}
+  hotSpot: {x: 0, y: 0}
 --- !u!61 &981683890
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2969,8 +3385,9 @@ GameObject:
   - component: {fileID: 1036683244}
   - component: {fileID: 1036683246}
   - component: {fileID: 1036683247}
+  - component: {fileID: 1036683248}
   m_Layer: 6
-  m_Name: Key Object
+  m_Name: Cloth Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2985,7 +3402,7 @@ Transform:
   m_GameObject: {fileID: 1036683242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.02, y: 2, z: 0}
+  m_LocalPosition: {x: 5.149, y: -1.418, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3040,7 +3457,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 12
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -358991178885415574, guid: 90cab2069de0dd741aaa11587b4a8963, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a9522169893e9024094fb9b29102efe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3088,7 +3505,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.4375}
+    oldSize: {x: 0.825, y: 0.475}
     newSize: {x: 0.5, y: 0.4375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3111,9 +3528,9 @@ MonoBehaviour:
   requiredItem: {fileID: 0}
   consumeItemOnSuccess: 0
   interactOnlyOnce: 1
-  successChat: {fileID: 0}
-  windowToOpen: {fileID: 0}
-  itemToGive: {fileID: 0}
+  successChat: {fileID: 11400000, guid: 03bf6a2a2f3aa5e41acf5bd6e2bef0f3, type: 2}
+  windowToOpen: {fileID: 11400000, guid: b10e788ee4688854685d37f502a2a108, type: 2}
+  itemToGive: {fileID: 11400000, guid: 9697835d4cbc6df49a151fbff2903b4d, type: 2}
   globalEventId: 
   OnSuccess:
     m_PersistentCalls:
@@ -3121,10 +3538,22 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 0}
-  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  defaultCursor: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 1
+--- !u!114 &1036683248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036683242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1073526172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3226,8 +3655,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1237351814}
   - component: {fileID: 1237351815}
+  - component: {fileID: 1237351818}
+  - component: {fileID: 1237351817}
+  - component: {fileID: 1237351816}
+  - component: {fileID: 1237351819}
   m_Layer: 6
-  m_Name: 48_Memory01_Desk_chair_0
+  m_Name: 48_Memory01_Desk_chair_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3307,6 +3740,126 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!61 &1237351816
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237351813}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.16, y: 2.76}
+    newSize: {x: 2.16, y: 2.76}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.16, y: 2.76}
+  m_EdgeRadius: 0
+--- !u!114 &1237351817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237351813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1237351813}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1237351818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237351813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37e2b8669bd55a145a6282625d7a7bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  requiredItem: {fileID: 0}
+  consumeItemOnSuccess: 0
+  interactOnlyOnce: 0
+  successChat: {fileID: 0}
+  windowToOpen: {fileID: 0}
+  itemToGive: {fileID: 0}
+  globalEventId: 
+  OnSuccess:
+    m_PersistentCalls:
+      m_Calls: []
+  examineChat: {fileID: 0}
+  wrongItemText: It doesn't seem to work with this.
+  toggleObject: {fileID: 648562067}
+  disableColliderOnSuccess: 0
+  disableObjectOnSuccess: 1
+--- !u!114 &1237351819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237351813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!224 &1260625454 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 251248728604887327, guid: 422773a3145d62742be7f93137bb531a, type: 3}
@@ -3503,6 +4056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1369033718}
   - component: {fileID: 1369033717}
+  - component: {fileID: 1369033719}
   m_Layer: 6
   m_Name: 49_Memory01_Wardrobe_0
   m_TagString: Untagged
@@ -3584,6 +4138,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 177201245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1369033719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369033716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1428464512 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6495804943606129891, guid: d7a900c324368e94e9d324cc9e021a7d, type: 3}
@@ -3601,6 +4169,8 @@ GameObject:
   - component: {fileID: 1452919499}
   - component: {fileID: 1452919504}
   - component: {fileID: 1452919505}
+  - component: {fileID: 1452919506}
+  - component: {fileID: 1452919507}
   m_Layer: 6
   m_Name: 46_Memory01_Desk_close_drawer_0
   m_TagString: Untagged
@@ -3747,7 +4317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e2b8669bd55a145a6282625d7a7bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  requiredItem: {fileID: 0}
+  requiredItem: {fileID: 11400000, guid: 4a56ce13baed9304cbb1ebe18410a449, type: 2}
   consumeItemOnSuccess: 0
   interactOnlyOnce: 0
   successChat: {fileID: 0}
@@ -3760,10 +4330,35 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 530226424}
-  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  defaultCursor: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 1
+--- !u!114 &1452919506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452919497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates: []
+--- !u!114 &1452919507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452919497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1001 &1531519627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3834,11 +4429,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 621750818616282442, guid: 955a5cbbb7ff69c41ba208a8cc8653ee, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 392
+      value: 161
       objectReference: {fileID: 0}
     - target: {fileID: 621750818616282442, guid: 955a5cbbb7ff69c41ba208a8cc8653ee, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 275
+      value: -214
       objectReference: {fileID: 0}
     - target: {fileID: 621750818616282442, guid: 955a5cbbb7ff69c41ba208a8cc8653ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3855,6 +4450,10 @@ PrefabInstance:
     - target: {fileID: 3215066727893325062, guid: 955a5cbbb7ff69c41ba208a8cc8653ee, type: 3}
       propertyPath: m_Name
       value: Play Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 3215066727893325062, guid: 955a5cbbb7ff69c41ba208a8cc8653ee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3877,6 +4476,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+--- !u!1 &1538741104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3215066727893325062, guid: 955a5cbbb7ff69c41ba208a8cc8653ee, type: 3}
+  m_PrefabInstance: {fileID: 1531519627}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1558025428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3899,7 +4503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6495804943606129891, guid: d7a900c324368e94e9d324cc9e021a7d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6639396762541687480, guid: d7a900c324368e94e9d324cc9e021a7d, type: 3}
       propertyPath: m_Pivot.x
@@ -3963,11 +4567,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639396762541687480, guid: d7a900c324368e94e9d324cc9e021a7d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 455
+      value: -296
       objectReference: {fileID: 0}
     - target: {fileID: 6639396762541687480, guid: d7a900c324368e94e9d324cc9e021a7d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -259
+      value: 238
       objectReference: {fileID: 0}
     - target: {fileID: 6639396762541687480, guid: d7a900c324368e94e9d324cc9e021a7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4368,7 +4972,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.22465642, g: 0.32326618, b: 0.5245282, a: 1}
+  m_BackGroundColor: {r: 0.6396227, g: 0.75670433, b: 1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4441,6 +5045,8 @@ GameObject:
   - component: {fileID: 1751803793}
   - component: {fileID: 1751803799}
   - component: {fileID: 1751803800}
+  - component: {fileID: 1751803801}
+  - component: {fileID: 1751803802}
   m_Layer: 6
   m_Name: 53_Memory01_wardrobe_open_down_0
   m_TagString: Untagged
@@ -4600,10 +5206,35 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 1765836771}
-  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  defaultCursor: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 1
+--- !u!114 &1751803801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751803792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates: []
+--- !u!114 &1751803802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751803792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1756162945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4798,6 +5429,8 @@ GameObject:
   - component: {fileID: 1765836772}
   - component: {fileID: 1765836778}
   - component: {fileID: 1765836779}
+  - component: {fileID: 1765836780}
+  - component: {fileID: 1765836781}
   m_Layer: 6
   m_Name: 51_Memory01_wardrobe_close_down_0
   m_TagString: Untagged
@@ -4955,10 +5588,35 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 1751803792}
-  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  defaultCursor: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 1
+--- !u!114 &1765836780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765836771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates: []
+--- !u!114 &1765836781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765836771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1786013645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4971,6 +5629,8 @@ GameObject:
   - component: {fileID: 1786013646}
   - component: {fileID: 1786013652}
   - component: {fileID: 1786013653}
+  - component: {fileID: 1786013654}
+  - component: {fileID: 1786013655}
   m_Layer: 6
   m_Name: 50_Memory01_wardrobe_close_up_0
   m_TagString: Untagged
@@ -5128,10 +5788,35 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 1945766147}
-  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  defaultCursor: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 1
+--- !u!114 &1786013654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786013645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates: []
+--- !u!114 &1786013655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786013645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &1850062620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5557,8 +6242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorManage
-  hover: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  original: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
+  hoverCursor: {fileID: 0}
+  hotSpot: {x: 0, y: 0}
 --- !u!4 &1921851397
 Transform:
   m_ObjectHideFlags: 0
@@ -5634,6 +6319,8 @@ GameObject:
   - component: {fileID: 1945766148}
   - component: {fileID: 1945766155}
   - component: {fileID: 1945766156}
+  - component: {fileID: 1945766157}
+  - component: {fileID: 1945766158}
   m_Layer: 6
   m_Name: 52_Memory01_wardrobe_open_up_1
   m_TagString: Untagged
@@ -5795,10 +6482,35 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 1786013645}
-  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  defaultCursor: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 1
+--- !u!114 &1945766157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945766147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates: []
+--- !u!114 &1945766158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945766147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CursorManage
+  hoverCursor: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
+  hotSpot: {x: 0, y: 0}
 --- !u!1 &2028937378
 GameObject:
   m_ObjectHideFlags: 0
@@ -5922,8 +6634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014c5e2587747304da185f8749a6b43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorManage
-  hover: {fileID: 2800000, guid: 460f45e07924add48a6573be3da081d3, type: 3}
-  original: {fileID: 2800000, guid: 5d1358eab14143e49b74b6d6e7d96aa5, type: 3}
+  hoverCursor: {fileID: 0}
+  hotSpot: {x: 0, y: 0}
 --- !u!114 &2077003939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6639,7 +7351,7 @@ GameObject:
   - component: {fileID: 4207332906757165155}
   - component: {fileID: 8843527649221240847}
   m_Layer: 6
-  m_Name: Cloth
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6982,8 +7694,6 @@ MonoBehaviour:
   examineChat: {fileID: 0}
   wrongItemText: It doesn't seem to work with this.
   toggleObject: {fileID: 0}
-  hoverCursor: {fileID: 0}
-  defaultCursor: {fileID: 0}
   disableColliderOnSuccess: 0
   disableObjectOnSuccess: 0
 --- !u!114 &8974016864217051156
@@ -7130,3 +7840,4 @@ SceneRoots:
   - {fileID: 587971659}
   - {fileID: 1073526173}
   - {fileID: 1921540822}
+  - {fileID: 157351476}

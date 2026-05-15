@@ -15,7 +15,7 @@ public class OpeningSequenceController : MonoBehaviour
     [SerializeField] private Animator glitchAnimator;
 
     [Header("Windows")]
-    [SerializeField] private WindowData memoryWindowData;
+    [SerializeField] private GameObject mainWindow;
 
     private void Awake()
     {
@@ -61,7 +61,7 @@ public class OpeningSequenceController : MonoBehaviour
                 break;
 
             case "open_memory":
-                WindowManager.Instance?.OpenWindow(memoryWindowData);
+                mainWindow.SetActive(true);
                 break;
         }
     }

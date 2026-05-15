@@ -14,38 +14,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ChatData
   chatLogs:
   - senderType: 2
-    senderName: 234
+    senderName: "\uC18C\uB140"
     senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
-    message: 234
-    interval: 0
-    actionTag: 
-  - senderType: 2
-    senderName: 234
-    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
-    message: 234
-    interval: 0
-    actionTag: 
-  - senderType: 2
-    senderName: 234
-    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
-    message: 234
+    message: "\uB2F9\uC2E0\uC740 \uB204\uAD6C\uC57C? \uC5EC\uAE34 \uC5B4\uB514\uACE0?"
     interval: 0
     actionTag: 
   - senderType: 0
     senderName: 
     senderSprite: {fileID: 0}
-    message: 234
+    message: "\uC5EC\uAE34 \uC6B0\uB9AC \uC9D1\uC774\uC57C.\t"
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uB0B4\uAC00 \uC65C \uC5EC\uAE30 \uC788\uC5B4?"
     interval: 0
     actionTag: 
   - senderType: 0
     senderName: 
     senderSprite: {fileID: 0}
-    message: 234
+    message: "\uC4F0\uB808\uAE30\uC7A5\uC5D0 \uBC84\uB824\uC838 \uC788\uB358 \uB108\uB97C
+      \uB370\uB9AC\uACE0 \uC654\uC5B4."
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uB0B4\uAC00 \uC4F0\uB808\uAE30\uC7A5\uC5D0 \uC788\uC5C8\uB2E4\uACE0?
+      \uB098\uB294 \uBD84\uBA85.."
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uAE30\uC5B5\uC774 \uC548\uB098..."
+    interval: 0
+    actionTag: glitch
+  - senderType: 0
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "\uB124 \uC2E0\uCCB4 \uC190\uC0C1\uB3C4\uAC00 \uB108\uBB34 \uC2EC\uD55C
+      \uD0D3\uC5D0 \uC218\uB9AC \uD558\uC9C0 \uBABB\uD588\uC5B4."
+    interval: 0
+    actionTag: 
+  - senderType: 0
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "\uACA8\uC6B0 \uBA54\uBAA8\uB9AC \uCE69\uB9CC \uBE7C\uC11C \uB0B4 \uCEF4\uD4E8\uD130\uB85C
+      \uC62E\uAE34\uAC70\uC57C."
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uB0A0 \uC65C \uB370\uB824\uC628\uAC70\uC57C?"
+    interval: 0
+    actionTag: 
+  - senderType: 0
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "\uC218\uB9AC\uD574\uC11C \uC0AC\uC6A9\uD574\uBCF4\uB824\uACE0 \uD588\uB294\uB370
+      \uC2E4\uD328\uD588\uC5B4."
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uC544.."
     interval: 0
     actionTag: 
   - senderType: 1
     senderName: 
     senderSprite: {fileID: 0}
-    message: end
+    message: "(\uBCF5\uC7A1\uD55C \uC5BC\uAD74\uC758 \uC18C\uB140\uB97C \uB4A4\uB85C\uD558\uACE0
+      \uADF8\uB140\uC758 \uBA54\uBAA8\uB9AC \uD30C\uC77C\uC744 \uB458\uB7EC\uBCF8\uB2E4.)"
+    interval: 0
+    actionTag: 
+  - senderType: 1
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "(\uBCF5\uAD6C\uD560 \uC218 \uC5C6\uC774 \uC190\uC0C1\uB41C \uD30C\uC77C\uB4E4\uC744
+      \uBC1C\uACAC\uD55C\uB2E4.)"
+    interval: 0
+    actionTag: 
+  - senderType: 1
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "(\uB2E4\uB978 \uD30C\uC77C\uB4E4\uACFC\uB294 \uB2E4\uB974\uAC8C \uC2E4\uD589\uC774
+      \uAC00\uB2A5\uD55C \uD30C\uC77C\uC744 \uBC1C\uACAC\uD558\uACE4 \uC18C\uB140\uC758
+      \uC606\uC5D0 \uD31D\uC5C5 \uCC3D\uC744 \uB744\uC6B4\uB2E4.)"
+    interval: 0
+    actionTag: open_memory
+  - senderType: 0
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "\uB124 \uBA54\uBAA8\uB9AC \uD30C\uC77C \uC548\uC5D0\uC11C \uBC1C\uACAC\uD588\uC5B4.\\n\uD639\uC2DC
+      \uBB50 \uAE30\uC5B5\uB098\uB294\uAC70 \uC5C6\uC5B4?"
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uC5EC\uAE34...\uB098\uB3C4 \uC798 \uBAA8\uB974\uACA0\uC5B4\t"
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uC774\uAC8C \uB0B4 \uBA54\uBAA8\uB9AC \uD30C\uC77C \uC548\uC5D0 \uC788\uC5C8\uB2E4\uACE0?"
+    interval: 0
+    actionTag: 
+  - senderType: 0
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "\uC751"
+    interval: 0
+    actionTag: 
+  - senderType: 2
+    senderName: "\uC18C\uB140"
+    senderSprite: {fileID: 8493455245889611680, guid: 2bc2c5e3537b9a64ab8f14a701635ce6, type: 3}
+    message: "\uD639\uC2DC \uC0C1\uD638\uC791\uC6A9 \uAC00\uB2A5\uD55C\uAC8C \uC788\uC744\uAE4C?"
+    interval: 0
+    actionTag: 
+  - senderType: 0
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "\uD55C\uBC88 \uCC3E\uC544\uBCFC\uAC8C."
+    interval: 0
+    actionTag: 
+  - senderType: 1
+    senderName: 
+    senderSprite: {fileID: 0}
+    message: "\uC0C1\uD638\uC791\uC6A9\uC774 \uAC00\uB2A5\uD55C \uBB3C\uAC74\uC744
+      \uD074\uB9AD\uD574\uBCF4\uC790."
     interval: 0
     actionTag: 

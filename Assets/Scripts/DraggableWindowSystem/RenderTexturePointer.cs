@@ -9,6 +9,7 @@ public class RenderTexturePointer : MonoBehaviour
     public RawImage renderArea;
 
     private CursorManage lastHoveredCursor;
+    private InteractableObject lastHoveredInteractable;
 
     public void Awake()
     {
@@ -32,24 +33,44 @@ public class RenderTexturePointer : MonoBehaviour
             
             if (hit.collider != null)
             {
+                // 1. 커서 컴포넌트 확인
                 CursorManage cm = hit.collider.GetComponent<CursorManage>();
-                if (cm != null)
+                if (cm != null && lastHoveredCursor != cm)
                 {
-                    if (lastHoveredCursor != cm)
-                    {
-                        if (lastHoveredCursor != null) lastHoveredCursor.SetDefaultCursor();
-                        cm.SetHoverCursor();
-                        lastHoveredCursor = cm;
-                    }
-                    return;
+                    cm.SetHoverCursor();
+                    lastHoveredCursor = cm;
                 }
+
+                // 2. 상호작용 컴포넌트 하이라이트 확인
+                InteractableObject io = hit.collider.GetComponent<InteractableObject>();
+                if (io != null && lastHoveredInteractable != io)
+                {
+                    if (lastHoveredInteractable != null) lastHoveredInteractable.SetHighlight(false);
+                    io.SetHighlight(true);
+                    lastHoveredInteractable = io;
+                }
+                
+                // 찾은 게 있다면 여기서 리턴 (리셋 방지)
+                if (cm != null || io != null) return;
             }
         }
 
+        // 아무것도 히트되지 않았거나 RenderTexture 밖으로 나갔을 때 리셋
+        ClearLastHovered();
+    }
+
+    private void ClearLastHovered()
+    {
         if (lastHoveredCursor != null)
         {
-            lastHoveredCursor.SetDefaultCursor();
+            CursorManage.ResetToDefault();
             lastHoveredCursor = null;
+        }
+
+        if (lastHoveredInteractable != null)
+        {
+            lastHoveredInteractable.SetHighlight(false);
+            lastHoveredInteractable = null;
         }
     }
 
